@@ -7,7 +7,6 @@
     <link rel="icon" href="/img/logo_torselis.png" type="image/gif">
     <link rel="stylesheet" href="/css/login.css">
     <title><?= $title; ?></title>
-    <script type="text/javascript" src="/js/login.js"></script>
 </head>
 
 <body>
@@ -29,14 +28,6 @@
                     <div class="field">
                         <div class="signup-link">Masuk sebagai Admin untuk melakukan pengaturan terhadap data pada <i>website</i></div>
                     </div>
-                    <!--             <div class="field">
-              <div class="title"> </div>
-            </div>
-            <div class="field btn">
-              <div class="btn-layer"></div>
-              <input type="submit" value="Login">
-            </div>
-            <div class="signup-link">Kembali ke <a href="">Beranda</a></div> -->
                 </form>
                 <form action="#" class="signup">
                     <div class="field">
@@ -49,11 +40,14 @@
                         <div class="btn-layer"></div>
                         <input type="submit" value="Masuk">
                     </div>
-                    <div class="signup-link">Kembali ke <a href="">Beranda</a></div>
+                    <a class="link-secondary link-underline-opacity-0 text-center" href="<?= base_url('/'); ?>" role="button">Kembali ke Beranda</a>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- JS Area -->
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 
 </html>

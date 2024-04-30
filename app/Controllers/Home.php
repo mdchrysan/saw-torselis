@@ -11,4 +11,12 @@ class Home extends BaseController
         ];
         return view('home/index', $data);
     }
+
+    public function setWeight()
+    {
+        $data = [
+            'title' => 'Torselis'
+        ];
+        return view('home/saw_settings', $data);
+    }
 }
