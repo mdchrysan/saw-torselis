@@ -13,3 +13,12 @@ $routes->get('/products', 'Product::index');
 
 // Login page
 $routes->get('/login', 'Login::index');
+$routes->get('/logout', 'Login::logout');
+
+// Admin page
+$routes->get('/molis-list', 'Admin_produk::indexMolis');
+$routes->get('/selis-list', 'Admin_produk::indexSelis');
+$routes->get('/create-produk', 'Admin_produk::create');
+$routes->post('/save-produk', 'Admin_produk::save');
+$routes->delete('/delete-produk/(:num)', 'Admin_produk::delete/$1');
+$routes->get('/edit-produk/(:segment)', 'Admin_produk::edit/$1');
