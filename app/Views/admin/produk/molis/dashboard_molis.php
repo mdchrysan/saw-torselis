@@ -29,63 +29,28 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">AM1</th>
-                    <td><img src="/img/dummy-img.jpg" alt="Gambar Kendaraan" style="width: 50px;"></td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>
-                        <!-- edit button -->
-                        <a role="button" class="btn bg-transparent" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <!-- delete trigger -->
-                        <button type="button" class="btn bg-transparent"><i class="fa-regular fa-trash-can"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">AM2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Jacob</td>
-                    <td>
-                        <!-- edit button -->
-                        <a role="button" class="btn bg-transparent" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <!-- delete trigger -->
-                        <button type="button" class="btn bg-transparent"><i class="fa-regular fa-trash-can"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">AM3</th>
-                    <td>Larry</td>
-                    <td>Siput</td>
-                    <td>@sbsp</td>
-                    <td>Larry</td>
-                    <td>Siput</td>
-                    <td>@sbsp</td>
-                    <td>Larry</td>
-                    <td>Siput</td>
-                    <td>@sbsp</td>
-                    <td>Larry</td>
-                    <td>
-                        <!-- edit button -->
-                        <a role="button" class="btn bg-transparent" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <!-- delete trigger -->
-                        <button type="button" class="btn bg-transparent"><i class="fa-regular fa-trash-can"></i></button>
-                    </td>
-                </tr>
+                <?php foreach ($produk as $p) : ?>
+                    <?php $pharga = number_format($p['harga']); ?>
+                    <tr>
+                        <th scope="row">AM<?= $p['id']; ?></th>
+                        <td><img src="/img/produk/<?= $p['gambar']; ?>" alt="Gambar Kendaraan" style="width: 50px;"></td>
+                        <td><?= $p['nama']; ?></td>
+                        <td><?= $pharga; ?></td>
+                        <td><?= $p['kap_baterai']; ?></td>
+                        <td><?= $p['power']; ?></td>
+                        <td><?= $p['kecepatan_max']; ?></td>
+                        <td><?= $p['jarak_tempuh']; ?></td>
+                        <td><?= $p['daya_angkut']; ?></td>
+                        <td><?= $p['warna']; ?></td>
+                        <td><?= $p['sistem_rem']; ?></td>
+                        <td>
+                            <!-- edit button -->
+                            <a role="button" class="btn bg-transparent" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <!-- delete trigger -->
+                            <button type="button" class="btn bg-transparent"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
     </div>

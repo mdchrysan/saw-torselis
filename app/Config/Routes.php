@@ -9,7 +9,8 @@ use CodeIgniter\Router\RouteCollection;
 //  Main page
 $routes->get('/', 'Home::index');
 $routes->get('/settings', 'Home::setWeight');
-$routes->get('/products', 'Product::index');
+$routes->get('/products/motor-listrik', 'Product::indexMolis');
+$routes->get('/products/sepeda-listrik', 'Product::indexSelis');
 $routes->get('/products/(:segment)', 'Product::details/$1');
 
 // Login page

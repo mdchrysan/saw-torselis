@@ -14,7 +14,7 @@
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('/'); ?>">Beranda</a></li>
                         <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?= base_url('/products'); ?>">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= base_url('/products/motor-listrik'); ?>">Produk</a></li>
                         <li class="nav-item"><a class="nav-link" href="<?= base_url('/login'); ?>">Login</a></li>
                     </ul>
                 </div>

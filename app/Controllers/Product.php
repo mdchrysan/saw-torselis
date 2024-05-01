@@ -13,13 +13,20 @@ class Product extends BaseController
         $this->produkModel = new ProdukModel();
     }
 
-    public function index(): string
+    public function indexMolis(): string
     {
-        $produk = $this->produkModel->findAll();
-
         $data = [
-            'title' => 'Produk | Torselis',
-            'produk' => $produk
+            'title' => 'Motor Listrik | Torselis',
+            'produk' => $this->produkModel->getMolis()
+        ];
+        return view('product/index', $data);
+    }
+
+    public function indexSelis(): string
+    {
+        $data = [
+            'title' => 'Sepeda Listrik | Torselis',
+            'produk' => $this->produkModel->getSelis()
         ];
         return view('product/index', $data);
     }

@@ -4,7 +4,7 @@
 <div class="card shadow container mt-5 p-3 mx-auto">
     <div class="row align-items-center">
         <div class="col-md-6 text-center">
-            <img src="/img/<?= $produk['gambar']; ?>" alt="Gambar Produk">
+            <img src="/img/produk/<?= $produk['gambar']; ?>" alt="Gambar Produk">
         </div>
         <div class="col-md-6">
             <div>

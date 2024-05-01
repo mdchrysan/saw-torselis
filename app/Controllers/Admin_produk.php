@@ -2,12 +2,22 @@
 
 namespace App\Controllers;
 
+use App\Models\ProdukModel;
+
 class Admin_produk extends BaseController
 {
+    protected $produkModel;
+
+    public function __construct()
+    {
+        $this->produkModel = new ProdukModel();
+    }
+
     public function indexMolis(): string
     {
         $data = [
-            'title' => 'Produk Molis | Torselis'
+            'title' => 'Produk Molis | Torselis',
+            'produk' => $this->produkModel->getMolis()
         ];
         return view('admin/produk/molis/dashboard_molis', $data);
     }
@@ -15,9 +25,10 @@ class Admin_produk extends BaseController
     public function indexSelis(): string
     {
         $data = [
-            'title' => 'Produk Selis | Torselis'
+            'title' => 'Produk Selis | Torselis',
+            'produk' => $this->produkModel->getSelis()
         ];
-        return view('admin/produk/molis/dashboard_selis', $data);
+        return view('admin/produk/selis/dashboard_selis', $data);
     }
 
     public function create()

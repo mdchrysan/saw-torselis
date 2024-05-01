@@ -20,4 +20,14 @@ class ProdukModel extends Model
         }
         return $this->where(['slug' => $slug])->first();
     }
+
+    public function getMolis()
+    {
+        return $this->where(['jenis_kendaraan' => '1'])->findAll();
+    }
+
+    public function getSelis()
+    {
+        return $this->where(['jenis_kendaraan' => '2'])->findAll();
+    }
 }
