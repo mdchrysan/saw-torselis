@@ -1,7 +1,7 @@
 <?= $this->extend('layout/admin_template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container mt-5 p-3">
+<div class="container mt-5 p-5">
     <h1 class="mb-3 text-center">Form Tambah Produk</h1>
     <form class="w-50 mx-auto" action="/save-produk" method="post" enctype="multipart/form-data">
         <?= csrf_field(); ?>

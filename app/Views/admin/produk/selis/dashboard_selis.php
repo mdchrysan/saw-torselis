@@ -1,7 +1,7 @@
 <?= $this->extend('layout/admin_template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container mt-5 p-3 text-center">
+<div class="container mt-5 p-5 text-center">
     <h1 class="mb-3">Daftar Produk Sepeda Listrik</h1>
     <a class="btn btn-warning mb-3" href="<?= base_url('/create-produk'); ?>" role="button">Tambah Produk</a>
     <?php if (session()->getFlashdata('pesan')) : ?>
