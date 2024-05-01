@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/karma_temp/ion.rangeSlider.skinFlat.css" />
     <link rel="stylesheet" href="css/karma_temp/magnific-popup.css">
     <link rel="stylesheet" href="css/karma_temp/main.css">
+
+    <link rel="stylesheet" href="/css/style.css">
     <title><?= $title; ?></title>
 </head>
 

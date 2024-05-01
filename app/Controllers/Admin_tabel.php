@@ -2,8 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\ProdukModel;
+
 class Admin_tabel extends BaseController
 {
+    protected $produkModel;
+
+    public function __construct()
+    {
+        $this->produkModel = new ProdukModel();
+    }
+
     public function indexKriteria(): string
     {
         $data = [
@@ -15,7 +24,9 @@ class Admin_tabel extends BaseController
     public function indexBobotProduk(): string
     {
         $data = [
-            'title' => 'Bobot Produk | Torselis'
+            'title' => 'Bobot Produk | Torselis',
+            'molis' => $this->produkModel->getMolis(),
+            'selis' => $this->produkModel->getSelis()
         ];
         return view('admin/tabel/bobot_produk', $data);
     }

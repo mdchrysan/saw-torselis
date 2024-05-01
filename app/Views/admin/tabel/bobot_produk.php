@@ -20,13 +20,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>AM1</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
+                            <?php foreach ($molis as $m) : ?>
+                                <tr>
+                                    <td>AM<?= $m['id']; ?></td>
+                                    <td><?= $m['harga']; ?></td>
+                                    <td><?= $m['power']; ?></td>
+                                    <td><?= $m['kecepatan_max']; ?></td>
+                                    <td><?= $m['jarak_tempuh']; ?></td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>
@@ -48,13 +50,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>AM1</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                            </tr>
+                            <?php foreach ($selis as $s) : ?>
+                                <tr>
+                                    <td>AS<?= $s['id']; ?></td>
+                                    <td><?= $s['harga']; ?></td>
+                                    <td><?= $s['power']; ?></td>
+                                    <td><?= $s['kecepatan_max']; ?></td>
+                                    <td><?= $s['jarak_tempuh']; ?></td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>

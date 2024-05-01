@@ -54,15 +54,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>> 20jt</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>15 - 20jt</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>10 - 15jt</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>z</td>
+                                <td>
+                                    <= 10jt</td>
                                 <td>5</td>
                             </tr>
                         </tbody>
@@ -81,15 +86,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>
+                                    <= 1000</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>1000 - 1500</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>1500 - 2200</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>z</td>
+                                <td>> 2200</td>
                                 <td>5</td>
                             </tr>
                         </tbody>
@@ -108,15 +118,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>
+                                    <= 55</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>55 - 60</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>65 - 70</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>z</td>
+                                <td>> 70</td>
                                 <td>5</td>
                             </tr>
                         </tbody>
@@ -135,15 +150,20 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>
+                                    <= 60</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>60 - 65</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>65 - 80</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>z</td>
+                                <td>> 80</td>
                                 <td>5</td>
                             </tr>
                         </tbody>
