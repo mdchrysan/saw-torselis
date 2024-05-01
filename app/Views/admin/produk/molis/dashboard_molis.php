@@ -31,7 +31,7 @@
             <tbody>
                 <tr>
                     <th scope="row">AM1</th>
-                    <td>Mark</td>
+                    <td><img src="/img/dummy-img.jpg" alt="Gambar Kendaraan" style="width: 50px;"></td>
                     <td>Otto</td>
                     <td>@mdo</td>
                     <td>Mark</td>

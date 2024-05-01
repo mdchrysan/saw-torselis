@@ -1,6 +1,27 @@
 <?= $this->extend('layout/main_template'); ?>
 
 <?= $this->section('content'); ?>
+<div class="container mt-5 p-3 text-center">
+    <h1 class="mb-3">Daftar Produk</h1>
+    <div class="btn-group" role="group" aria-label="Button Jenis Produk">
+        <a href="#" class="btn btn-warning">Motor Listrik</a>
+        <a href="#" class="btn btn-warning">Sepeda Listrik</a>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 p-4">
+        <?php foreach ($produk as $p) : ?>
+            <div class="col mb-3">
+                <div class="card" style="width: 15rem;">
+                    <img src="/img/<?= $p['gambar']; ?>" class="card-img-top" alt="Gambar Produk">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $p['nama']; ?></h5>
+                        <a href="/products/<?= $p['slug']; ?>" class="btn btn-outline-warning">Detail</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
 <section class="owl-carousel active-product-area section_gap">
     <!-- motor slide -->
     <div class="single-product-slider">
@@ -560,4 +581,5 @@
         </div>
     </div>
 </section>
+
 <?= $this->endSection(); ?>
