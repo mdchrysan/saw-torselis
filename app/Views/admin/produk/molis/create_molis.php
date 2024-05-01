@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <div class="container mt-5 p-5">
     <h1 class="mb-3 text-center">Form Tambah Produk</h1>
-    <form class="w-50 mx-auto" action="/save-produk" method="post" enctype="multipart/form-data">
+    <form class="w-50 mx-auto" action="/save-produk" method="POST" enctype="multipart/form-data">
         <?= csrf_field(); ?>
         <!-- row 1: nama & baterai -->
         <div class="row mb-3">
@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <label for="angkutProduk" class="form-label">Daya Angkut (kg)</label>
-                <input type="number" class="form-control form-input" id="angkutProduk" name="dayaangkut" value="">
+                <input type="number" class="form-control form-input" id="angkutProduk" name="daya_angkut" value="">
             </div>
         </div>
         <!-- row 3: power & warna -->
@@ -66,13 +66,13 @@
         <!-- row 6: gambar & preview -->
         <div class="row mb-3">
             <div class="col-lg-6 col-md-12">
-                <label for="gambarProduk" class="form-label">Gambar</label>
-                <input type="file" class="form-control form-input" id="gambarProduk" name="gambar" value="">
+                <label for="gambarProduk" class="form-label">Preview</label>
+                <input type="file" class="form-control form-input" id="gambarProduk" name="gambar" value="" onchange="previewImage()">
             </div>
             <div class="col-lg-6 col-md-12">
                 <label for="previewProduk" class="form-label">Gambar</label>
-                <!-- <img src="/img/default.png" alt="Gambar Produk" class="img-thumbnail img-preview" id="previewProduk"> -->
-                <div style="background-color: orange;" id="previewProduk">Preview disini</div>
+                <img src="/img/dummy-img.jpg" alt="Gambar Produk" class="img-thumbnail img-preview" id="previewProduk">
+                <!-- <div style="background-color: orange;" id="previewProduk">Preview disini</div> -->
             </div>
         </div>
         <div class="row mb-3 text-center">
