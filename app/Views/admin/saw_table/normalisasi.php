@@ -7,7 +7,7 @@
         <!-- Molis -->
         <div class="col-lg-6 my-3">
             <div class="card shadow border-warning">
-                <div class="card-header text-start">Nilai Alternatif Motor Listrik</div>
+                <div class="card-header text-start">Nilai Normalisasi Motor Listrik</div>
                 <div class="card-body">
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
@@ -23,10 +23,11 @@
                             <?php foreach ($molis as $m) : ?>
                                 <tr>
                                     <td>AM<?= $m['id']; ?></td>
-                                    <td><?= $m['harga']; ?></td>
-                                    <td><?= $m['power']; ?></td>
-                                    <td><?= $m['kecepatan_max']; ?></td>
-                                    <td><?= $m['jarak_tempuh']; ?></td>
+                                    <!-- show r_m to 4 decimal places -->
+                                    <td><?= number_format($m['r_m1'], 4, '.', ''); ?></td>
+                                    <td><?= number_format($m['r_m2'], 4, '.', ''); ?></td>
+                                    <td><?= number_format($m['r_m3'], 4, '.', ''); ?></td>
+                                    <td><?= number_format($m['r_m4'], 4, '.', ''); ?></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>
@@ -37,7 +38,7 @@
         <!-- Selis -->
         <div class="col-lg-6 my-3">
             <div class="card shadow border-warning">
-                <div class="card-header text-start">Nilai Alternatif Sepeda Listrik</div>
+                <div class="card-header text-start">Nilai Normalisasi Sepeda Listrik</div>
                 <div class="card-body">
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
@@ -53,10 +54,11 @@
                             <?php foreach ($selis as $s) : ?>
                                 <tr>
                                     <td>AS<?= $s['id']; ?></td>
-                                    <td><?= $s['harga']; ?></td>
-                                    <td><?= $s['power']; ?></td>
-                                    <td><?= $s['kecepatan_max']; ?></td>
-                                    <td><?= $s['jarak_tempuh']; ?></td>
+                                    <!-- show r_s to 4 decimal places -->
+                                    <td><?= number_format($s['r_s1'], 4, '.', ''); ?></td>
+                                    <td><?= number_format($s['r_s2'], 4, '.', ''); ?></td>
+                                    <td><?= number_format($s['r_s3'], 4, '.', ''); ?></td>
+                                    <td><?= number_format($s['r_s4'], 4, '.', ''); ?></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>

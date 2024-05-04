@@ -9,8 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 //  Main page
 $routes->get('/', 'Home::index');
 $routes->get('/settings', 'Home::setWeight');
-// on development, should be post:
-$routes->get('/result', 'SAW::getWeight');
+$routes->post('/result', 'SAW::getWeight');
 $routes->get('/products', 'Product::indexMolis');
 $routes->get('/products/motor-listrik', 'Product::indexMolis');
 $routes->get('/products/sepeda-listrik', 'Product::indexSelis');
@@ -32,3 +31,4 @@ $routes->get('/edit-product/(:segment)', 'AdminProduct::edit/$1');
 $routes->get('/kriteria', 'SAW::indexKriteria');
 $routes->get('/bobot-produk', 'SAW::indexBobotProduk');
 $routes->get('/normalisasi', 'SAW::indexNormalisasi');
+$routes->get('/debug', 'SAW::getNormalisasi');

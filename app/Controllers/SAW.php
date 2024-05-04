@@ -15,12 +15,6 @@ class SAW extends BaseController
 
     public function getWeight()
     {
-        $data = [
-            'title' => 'Hasil Rekomendasi | Torselis',
-            // 'preferensi' => $preferensi
-        ];
-        return view('home/result', $data);
-
         // validation
         # code ...
 
@@ -54,17 +48,21 @@ class SAW extends BaseController
 
         // function getPreferensi return $preferensi contains array of V1,V2,V3
 
-        // return view
+        $data = [
+            'title' => 'Hasil Rekomendasi | Torselis',
+            // 'preferensi' => $preferensi
+        ];
+        return view('home/result', $data);
     }
 
     public function getNormalisasiMolis()
     {
-        // get all key value from settings() and set to var
-        $value = $this->getWeight();
-        dd($value);
-
         // get product
-        $molis = $this->produkModel->getMolis();
+        $m = $this->produkModel->getMolis();
+
+        // find min x_c1 (cost)
+        $molis = array_column($m, 'harga');
+        $min = min($molis);
 
         // create temp var
         // $temp_harga = [];
@@ -94,14 +92,63 @@ class SAW extends BaseController
 
     public function getNormalisasiSelis()
     {
-        # code ...
-
         // get product
-        $selis = $this->produkModel->getSelis();
+        $s = $this->produkModel->getSelis();
+
+        // find min x_c1 (cost)
+        $molis = array_column($s, 'harga');
+        $min = min($molis);
+        dd($min);
 
         # code ...
 
-        return $selis;
+        return 0;
+    }
+
+    public function getNormalisasi()
+    {
+        // get products
+        list($molis, $selis) = $this->produkModel->getTorselis();
+
+        //  get min max
+        # find min of x_c1 (cost)
+        $min_m1 = min(array_column($molis, 'harga'));
+        $min_s1 = min(array_column($selis, 'harga'));
+
+        # find max of x_c2 (benefit)
+        $max_m2 = max(array_column($molis, 'power'));
+        $max_s2 = max(array_column($selis, 'power'));
+
+        # find max of x_c3 (benefit)
+        $max_m3 = max(array_column($molis, 'kecepatan_max'));
+        $max_s3 = max(array_column($selis, 'kecepatan_max'));
+
+        # find max of x_c4 (benefit)
+        $max_m4 = max(array_column($molis, 'jarak_tempuh'));
+        $max_s4 = max(array_column($selis, 'jarak_tempuh'));
+
+        // count r
+        # molis
+        $r_molis = [];
+        foreach ($molis as $m) {
+            $m['r_m1'] = $min_m1 / $m['harga'];
+            $m['r_m2'] = $m['power'] / $max_m2;
+            $m['r_m3'] = $m['kecepatan_max'] / $max_m3;
+            $m['r_m4'] = $m['jarak_tempuh'] / $max_m4;
+            $r_molis[] = $m;
+        }
+
+        #selis
+        $r_selis = [];
+        foreach ($selis as $s) {
+            $s['r_s1'] = $min_s1 / $s['harga'];
+            $s['r_s2'] = $s['power'] / $max_s2;
+            $s['r_s3'] = $s['kecepatan_max'] / $max_s3;
+            $s['r_s4'] = $s['jarak_tempuh'] / $max_s4;
+            $r_selis[] = $s;
+        }
+
+        return array($r_molis, $r_selis);
     }
 
     public function indexKriteria(): string
@@ -136,8 +183,7 @@ class SAW extends BaseController
 
     public function indexNormalisasi(): string
     {
-        $molis = $this->getNormalisasiMolis();
-        $selis = $this->getNormalisasiSelis();
+        list($molis, $selis) = $this->getNormalisasi();
 
         $data = [
             'title' => 'Normalisasi | Torselis',
