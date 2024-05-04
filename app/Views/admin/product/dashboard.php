@@ -2,8 +2,11 @@
 
 <?= $this->section('content'); ?>
 <div class="container mt-5 p-5 text-center">
-    <h1 class="mb-3">Daftar Produk Sepeda Listrik</h1>
-    <a class="btn btn-warning mb-3" href="<?= base_url('/create-produk'); ?>" role="button">Tambah Produk</a>
+    <!-- return array 2d as one string to check jenis_kendaraan value -->
+    <?php $value = array_column($produk, 'jenis_kendaraan')['1'] ?>
+    <!-- conditional title -->
+    <h1 class="mb-3">Daftar Produk <?= ($value == '1') ? "Motor" : "Sepeda"; ?> Listrik</h1>
+    <a class="btn btn-warning mb-3" href="<?= base_url('/create-product'); ?>" role="button">Tambah Produk</a>
     <?php if (session()->getFlashdata('pesan')) : ?>
         <div class="alert alert-success" role="alert">
             <?= session()->getFlashdata('pesan'); ?>
@@ -35,7 +38,7 @@
                     <?php $pharga = number_format($p['harga']); ?>
                     <tr>
                         <td><?= $i++; ?></td>
-                        <th scope="row">AS<?= $p['id']; ?></th>
+                        <th scope="row">AM<?= $p['id']; ?></th>
                         <td><img src="/img/produk/<?= $p['gambar']; ?>" alt="Gambar Kendaraan" style="width: 50px;"></td>
                         <td><?= $p['nama']; ?></td>
                         <td><?= $pharga; ?></td>

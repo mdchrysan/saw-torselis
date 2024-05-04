@@ -79,7 +79,7 @@ class SAW extends BaseController
         $data = [
             'title' => 'Kriteria | Torselis'
         ];
-        return view('admin/tabel/kriteria', $data);
+        return view('admin/saw_table/kriteria', $data);
     }
 
     public function indexBobotProduk(): string
@@ -91,7 +91,7 @@ class SAW extends BaseController
             'molis' => $molis,
             'selis' => $selis
         ];
-        return view('admin/tabel/bobot_produk', $data);
+        return view('admin/saw_table/bobot_produk', $data);
     }
 
     public function indexNormalisasi(): string
@@ -104,6 +104,6 @@ class SAW extends BaseController
             'molis' => $molis,
             'selis' => $selis
         ];
-        return view('admin/tabel/normalisasi', $data);
+        return view('admin/saw_table/normalisasi', $data);
     }
 }

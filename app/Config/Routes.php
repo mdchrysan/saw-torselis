@@ -19,12 +19,12 @@ $routes->get('/login', 'Login::index');
 $routes->get('/logout', 'Login::logout');
 
 // Admin page - Produk
-$routes->get('/molis-list', 'Admin_produk::indexMolis');
-$routes->get('/selis-list', 'Admin_produk::indexSelis');
-$routes->get('/create-produk', 'Admin_produk::create');
-$routes->post('/save-produk', 'Admin_produk::save');
-$routes->delete('/delete-produk/(:num)', 'Admin_produk::delete/$1');
-$routes->get('/edit-produk/(:segment)', 'Admin_produk::edit/$1');
+$routes->get('/molis-list', 'AdminProduct::indexMolis');
+$routes->get('/selis-list', 'AdminProduct::indexSelis');
+$routes->get('/create-product', 'AdminProduct::create');
+$routes->post('/save-product', 'AdminProduct::save');
+$routes->delete('/delete-product/(:num)', 'AdminProduct::delete/$1');
+$routes->get('/edit-product/(:segment)', 'AdminProduct::edit/$1');
 
 // Admin page - Tabel SAW
 $routes->get('/kriteria', 'SAW::indexKriteria');

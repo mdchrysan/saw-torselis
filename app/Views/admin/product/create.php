@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <div class="container mt-5 p-5">
     <h1 class="mb-3 text-center">Form Tambah Produk</h1>
-    <form class="w-50 mx-auto" action="/save-produk" method="POST" enctype="multipart/form-data">
+    <form class="w-50 mx-auto" action="/save-product" method="POST" enctype="multipart/form-data">
         <?= csrf_field(); ?>
         <!-- row 1: nama & baterai -->
         <div class="row mb-3">

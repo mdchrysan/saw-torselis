@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ProdukModel;
 
-class Admin_produk extends BaseController
+class AdminProduct extends BaseController
 {
     protected $produkModel;
 
@@ -15,11 +15,17 @@ class Admin_produk extends BaseController
 
     public function indexMolis(): string
     {
+        // return array 2d as one string
+        // $m = $this->produkModel->getMolis();
+        // $t = array_column($m, 'jenis_kendaraan');
+        // dd($t['1']);
+        // one line code
+        // dd(array_column($m, 'jenis_kendaraan')['1']);
         $data = [
             'title' => 'Produk Molis | Torselis',
             'produk' => $this->produkModel->getMolis()
         ];
-        return view('admin/produk/molis/dashboard_molis', $data);
+        return view('admin/product/dashboard', $data);
     }
 
     public function indexSelis(): string
@@ -28,7 +34,7 @@ class Admin_produk extends BaseController
             'title' => 'Produk Selis | Torselis',
             'produk' => $this->produkModel->getSelis()
         ];
-        return view('admin/produk/selis/dashboard_selis', $data);
+        return view('admin/product/dashboard', $data);
     }
 
     public function create()
@@ -39,7 +45,7 @@ class Admin_produk extends BaseController
         ];
         // if 1 > molis
         // if 2 > selis
-        return view('admin/produk/molis/create_molis', $data);
+        return view('admin/product/create', $data);
         // return view('admin/produk/molis/create_selis', $data);
     }
 
