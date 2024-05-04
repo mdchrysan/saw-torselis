@@ -22,7 +22,7 @@
                         <tbody>
                             <?php foreach ($molis as $m) : ?>
                                 <tr>
-                                    <td>AM<?= $m['id']; ?></td>
+                                    <th scope="row"><?= ($m['jenis_kendaraan'] = '1') ? "AM" : "AS"; ?><?= $m['id']; ?></th>
                                     <!-- show r_m to 4 decimal places -->
                                     <td><?= number_format($m['r_m1'], 4, '.', ''); ?></td>
                                     <td><?= number_format($m['r_m2'], 4, '.', ''); ?></td>
@@ -53,7 +53,7 @@
                         <tbody>
                             <?php foreach ($selis as $s) : ?>
                                 <tr>
-                                    <td>AS<?= $s['id']; ?></td>
+                                    <th scope="row"><?= ($s['jenis_kendaraan'] = '2') ? "AS" : "AM"; ?><?= $s['id']; ?></th>
                                     <!-- show r_s to 4 decimal places -->
                                     <td><?= number_format($s['r_s1'], 4, '.', ''); ?></td>
                                     <td><?= number_format($s['r_s2'], 4, '.', ''); ?></td>

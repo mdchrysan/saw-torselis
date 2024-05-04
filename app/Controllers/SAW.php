@@ -25,8 +25,8 @@ class SAW extends BaseController
         $w_c3 = $this->request->getVar('w_c3');
         $w_c4 = $this->request->getVar('w_c4');
 
-        if ($type == '1') $produk = "Motor Listrik";
-        elseif ($type == '2') $produk = "Sepeda Listrik";
+        // if ($type == '1') $produk = "Motor Listrik";
+        // elseif ($type == '2') $produk = "Sepeda Listrik";
 
         // normalize weight
         $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
@@ -52,103 +52,59 @@ class SAW extends BaseController
             'title' => 'Hasil Rekomendasi | Torselis',
             // 'preferensi' => $preferensi
         ];
-        return view('home/result', $data);
+
+        // return view('home/result', $data);
+        return view('home/preferensi', $data);
     }
 
     public function getNormalisasiMolis()
     {
-        // get product
-        $m = $this->produkModel->getMolis();
+        // get products
+        $molis = $this->produkModel->getMolis();
 
-        // find min x_c1 (cost)
-        $molis = array_column($m, 'harga');
-        $min = min($molis);
-
-        // create temp var
-        // $temp_harga = [];
-        // $temp_power = [];
-        // $temp_kecepatan = [];
-        // $temp_jarak = [];
-
-        // save products to temp 
-        // foreach ($molis as $key => $value) {
-        //     // $temp_harga = ;
-        //     // $temp_power = ;
-        //     // $temp_kecepatan = ;
-        //     // $temp_jarak = ;
-        // }
+        //  get min max
+        //  cost-min: harga, benefit-max: power, kec, jarak
+        $min_c1 = min(array_column($molis, 'harga'));
+        $max_c2 = max(array_column($molis, 'power'));
+        $max_c3 = max(array_column($molis, 'kecepatan_max'));
+        $max_c4 = max(array_column($molis, 'jarak_tempuh'));
 
         // count r
-        // min = harga, max = power, kec, jarak
-        // foreach ($molis as $key => $value) {
-        //     $r_harga = min($temp_harga)/$xharga;
-        //     $r_power = $xpower/max($temp_power);
-        //     $r_kecepatan = $xkecepatan/max($temp_kecepatan);
-        //     $r_jarak = $xjarak/max($temp_jarak);
-        // }
+        $r = [];
+        foreach ($molis as $m) {
+            $m['r_m1'] = $min_c1 / $m['harga'];
+            $m['r_m2'] = $m['power'] / $max_c2;
+            $m['r_m3'] = $m['kecepatan_max'] / $max_c3;
+            $m['r_m4'] = $m['jarak_tempuh'] / $max_c4;
+            $r[] = $m;
+        }
 
-        return $molis;
+        return $r;
     }
 
     public function getNormalisasiSelis()
     {
-        // get product
-        $s = $this->produkModel->getSelis();
-
-        // find min x_c1 (cost)
-        $molis = array_column($s, 'harga');
-        $min = min($molis);
-        dd($min);
-
-        # code ...
-
-        return 0;
-    }
-
-    public function getNormalisasi()
-    {
         // get products
-        list($molis, $selis) = $this->produkModel->getTorselis();
+        $selis = $this->produkModel->getSelis();
 
         //  get min max
-        # find min of x_c1 (cost)
-        $min_m1 = min(array_column($molis, 'harga'));
-        $min_s1 = min(array_column($selis, 'harga'));
-
-        # find max of x_c2 (benefit)
-        $max_m2 = max(array_column($molis, 'power'));
-        $max_s2 = max(array_column($selis, 'power'));
-
-        # find max of x_c3 (benefit)
-        $max_m3 = max(array_column($molis, 'kecepatan_max'));
-        $max_s3 = max(array_column($selis, 'kecepatan_max'));
-
-        # find max of x_c4 (benefit)
-        $max_m4 = max(array_column($molis, 'jarak_tempuh'));
-        $max_s4 = max(array_column($selis, 'jarak_tempuh'));
+        //  cost-min: harga, benefit-max: power, kec, jarak
+        $min_c1 = min(array_column($selis, 'harga'));
+        $max_c2 = max(array_column($selis, 'power'));
+        $max_c3 = max(array_column($selis, 'kecepatan_max'));
+        $max_c4 = max(array_column($selis, 'jarak_tempuh'));
 
         // count r
-        # molis
-        $r_molis = [];
-        foreach ($molis as $m) {
-            $m['r_m1'] = $min_m1 / $m['harga'];
-            $m['r_m2'] = $m['power'] / $max_m2;
-            $m['r_m3'] = $m['kecepatan_max'] / $max_m3;
-            $m['r_m4'] = $m['jarak_tempuh'] / $max_m4;
-            $r_molis[] = $m;
-        }
-
-        #selis
-        $r_selis = [];
+        $r = [];
         foreach ($selis as $s) {
-            $s['r_s1'] = $min_s1 / $s['harga'];
-            $s['r_s2'] = $s['power'] / $max_s2;
-            $s['r_s3'] = $s['kecepatan_max'] / $max_s3;
-            $s['r_s4'] = $s['jarak_tempuh'] / $max_s4;
-            $r_selis[] = $s;
+            $s['r_s1'] = $min_c1 / $s['harga'];
+            $s['r_s2'] = $s['power'] / $max_c2;
+            $s['r_s3'] = $s['kecepatan_max'] / $max_c3;
+            $s['r_s4'] = $s['jarak_tempuh'] / $max_c4;
+            $r[] = $s;
         }
 
-        return array($r_molis, $r_selis);
+        return $r;
     }
 
     public function indexKriteria(): string
@@ -183,12 +139,24 @@ class SAW extends BaseController
 
     public function indexNormalisasi(): string
     {
-        list($molis, $selis) = $this->getNormalisasi();
+        $molis = $this->getNormalisasiMolis();
+        $selis = $this->getNormalisasiSelis();
 
         $data = [
             'title' => 'Normalisasi | Torselis',
             'molis' => $molis,
             'selis' => $selis
+        ];
+        return view('admin/saw_table/normalisasi', $data);
+    }
+
+    public function indexPreferensi()
+    {
+        $p = 0;
+
+        $data = [
+            'title' => 'Preferensi | Torselis',
+            'produk' => $p
         ];
         return view('admin/saw_table/normalisasi', $data);
     }
