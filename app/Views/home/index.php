@@ -27,7 +27,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-features">
                     <div class="f-icon">
-                        <img style="height: 50px;" src="img/about/cursor.png" alt="">
+                        <img id="iconAbout1" style="height: 50px;" src="img/about/cursor.png" alt="">
                     </div>
                     <h6>Mendukung</h6>
                     <p>pemilihan motor & sepeda listrik</p>
@@ -37,7 +37,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-features">
                     <div class="f-icon">
-                        <img style="height: 50px;" src="img/about/scale.png" alt="">
+                        <img id="iconAbout2" style="height: 50px;" src="img/about/scale.png" alt="">
                     </div>
                     <h6>Menggunakan</h6>
                     <p>kriteria yang dapat disesuaikan</p>
@@ -47,7 +47,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="single-features">
                     <div class="f-icon">
-                        <img style="height: 50px;" src="img/about/achievement.png" alt="">
+                        <img id="iconAbout3" style="height: 50px;" src="img/about/achievement.png" alt="">
                     </div>
                     <h6>Memberikan</h6>
                     <p>rekomendasi terbaik</p>

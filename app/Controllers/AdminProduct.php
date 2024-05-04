@@ -15,6 +15,7 @@ class AdminProduct extends BaseController
 
     public function indexMolis(): string
     {
+        # experiment
         // return array 2d as one string
         // $m = $this->produkModel->getMolis();
         // $t = array_column($m, 'jenis_kendaraan');

@@ -48,27 +48,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Harga (Rp)</th>
+                                <th>Harga (C1)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>> 20jt</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>15 - 20jt</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>10 - 15jt</td>
+                                <td>Murah</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>
-                                    <= 10jt</td>
-                                <td>5</td>
+                                <td>Sedang</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Cukup Mahal</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Mahal</td>
+                                <td>1</td>
                             </tr>
                         </tbody>
                     </table>
@@ -80,27 +79,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Power (watt)</th>
+                                <th>Power (C1)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <= 1000</td>
+                                <td>Kecil</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Sedang</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>1000 - 1500</td>
+                                <td>Besar</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>1500 - 2200</td>
+                                <td>Sangat Besar</td>
                                 <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>> 2200</td>
-                                <td>5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -112,27 +110,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Kec. (km/h)</th>
+                                <th>Kecepatan Max (C3)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <= 55</td>
+                                <td>Rendah</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Biasa</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>55 - 60</td>
+                                <td>Cukup Tinggi</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>65 - 70</td>
+                                <td>Tinggi</td>
                                 <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>> 70</td>
-                                <td>5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -144,27 +141,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Jarak Tempuh (km)</th>
+                                <th>Jarak Tempuh (C4)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
-                                    <= 60</td>
+                                <td>Dekat</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Sedang</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>60 - 65</td>
+                                <td>Cukup Jauh</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>65 - 80</td>
+                                <td>Jauh</td>
                                 <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>> 80</td>
-                                <td>5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -182,22 +178,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Harga (Rp)</th>
+                                <th>Harga (C1)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>y - z</td>
+                                <td>Murah</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>z</td>
-                                <td>5</td>
+                                <td>Sedang</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Cukup Mahal</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Mahal</td>
+                                <td>1</td>
                             </tr>
                         </tbody>
                     </table>
@@ -209,22 +209,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Power (watt)</th>
+                                <th>Power (C1)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>Kecil</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Sedang</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Besar</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>Sangat Besar</td>
                                 <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>z</td>
-                                <td>5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -236,22 +240,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Kec. (km/h)</th>
+                                <th>Kecepatan Max (C3)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>Rendah</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Biasa</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Cukup Tinggi</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>Tinggi</td>
                                 <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>z</td>
-                                <td>5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -263,22 +271,26 @@
                     <table class="table table-sm table-borderless">
                         <thead class="table-warning">
                             <tr>
-                                <th>Jarak Tempuh (km)</th>
+                                <th>Jarak Tempuh (C4)</th>
                                 <th>Bobot</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>x - y</td>
+                                <td>Dekat</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Sedang</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Cukup Jauh</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>y - z</td>
+                                <td>Jauh</td>
                                 <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>z</td>
-                                <td>5</td>
                             </tr>
                         </tbody>
                     </table>

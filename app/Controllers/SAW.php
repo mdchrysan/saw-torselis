@@ -19,13 +19,31 @@ class SAW extends BaseController
         # code ...
 
         // get product type & weight
-        $value = $this->request->getVar('value');
+        $type = $this->request->getVar('type');
         $w_c1 = $this->request->getVar('w_c1');
         $w_c2 = $this->request->getVar('w_c2');
         $w_c3 = $this->request->getVar('w_c3');
         $w_c4 = $this->request->getVar('w_c4');
 
-        return array($value, $w_c1, $w_c2, $w_c3, $w_c4);
+        if ($type == '1') $produk = "Motor Listrik";
+        elseif ($type == '2') $produk = "Sepeda Listrik";
+
+        // normalize weight
+        $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
+        $text1 = "Jenis kendaraan: " . $produk;
+        $text2 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
+        $w_c1 = $w_c1 / $sum_w;
+        $w_c2 = $w_c2 / $sum_w;
+        $w_c3 = $w_c3 / $sum_w;
+        $w_c4 = $w_c4 / $sum_w;
+        $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
+        $text3 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
+
+        # debug
+        $w = array($text1, $text2, $text3);
+        dd($w);
+
+        return array($type, $w_c1, $w_c2, $w_c3, $w_c4);
     }
 
     public function getNormalisasiMolis()
@@ -84,6 +102,16 @@ class SAW extends BaseController
 
     public function indexBobotProduk(): string
     {
+        # experiment
+        // $p = $this->produkModel->getTorselis();
+        // $produk = [
+        //     'molis' => $p[0],
+        //     'selis' => $p[1]
+        // ];
+        # same output
+        // dd($p);
+        // dd($produk);
+
         list($molis, $selis) = $this->produkModel->getTorselis();
 
         $data = [
