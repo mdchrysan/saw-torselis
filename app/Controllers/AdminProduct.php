@@ -44,10 +44,7 @@ class AdminProduct extends BaseController
             'title' => 'Tambah Produk | Torselis',
             'validation' => \Config\Services::validation()
         ];
-        // if 1 > molis
-        // if 2 > selis
         return view('admin/product/create', $data);
-        // return view('admin/produk/molis/create_selis', $data);
     }
 
     public function save()

@@ -9,7 +9,8 @@ use CodeIgniter\Router\RouteCollection;
 //  Main page
 $routes->get('/', 'Home::index');
 $routes->get('/settings', 'Home::setWeight');
-$routes->post('/result', 'SAW::getWeight');
+// on development, should be post:
+$routes->get('/result', 'SAW::getWeight');
 $routes->get('/products', 'Product::indexMolis');
 $routes->get('/products/motor-listrik', 'Product::indexMolis');
 $routes->get('/products/sepeda-listrik', 'Product::indexSelis');

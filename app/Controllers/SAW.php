@@ -15,6 +15,12 @@ class SAW extends BaseController
 
     public function getWeight()
     {
+        $data = [
+            'title' => 'Hasil Rekomendasi | Torselis',
+            // 'preferensi' => $preferensi
+        ];
+        return view('home/result', $data);
+
         // validation
         # code ...
 
@@ -30,26 +36,32 @@ class SAW extends BaseController
 
         // normalize weight
         $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
-        $text1 = "Jenis kendaraan: " . $produk;
-        $text2 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
+        // $text1 = "Jenis kendaraan: " . $produk;
+        // $text2 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
         $w_c1 = $w_c1 / $sum_w;
         $w_c2 = $w_c2 / $sum_w;
         $w_c3 = $w_c3 / $sum_w;
         $w_c4 = $w_c4 / $sum_w;
         $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
-        $text3 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
+        // $text3 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
 
         # debug
-        $w = array($text1, $text2, $text3);
-        dd($w);
+        // $w = array($text1, $text2, $text3);
+        // dd($w);
 
-        return array($type, $w_c1, $w_c2, $w_c3, $w_c4);
+        // call function getPreferensi
+        // return array($type, $w_c1, $w_c2, $w_c3, $w_c4);
+
+        // function getPreferensi return $preferensi contains array of V1,V2,V3
+
+        // return view
     }
 
     public function getNormalisasiMolis()
     {
         // get all key value from settings() and set to var
-        # code ...
+        $value = $this->getWeight();
+        dd($value);
 
         // get product
         $molis = $this->produkModel->getMolis();
