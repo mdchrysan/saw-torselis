@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\Log\Logger;
+use Config\Logger as ConfigLogger;
+
 class Login extends BaseController
 {
     public function index(): string

@@ -14,6 +14,7 @@
             <thead class="table-warning">
                 <!-- 12 cols -->
                 <tr>
+                    <th scope="col">No</th>
                     <th scope="col">Kode</th>
                     <th scope="col">Gambar</th>
                     <th scope="col">Nama</th>
@@ -29,9 +30,11 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1; ?>
                 <?php foreach ($produk as $p) : ?>
                     <?php $pharga = number_format($p['harga']); ?>
                     <tr>
+                        <td><?= $i++; ?></td>
                         <th scope="row">AM<?= $p['id']; ?></th>
                         <td><img src="/img/produk/<?= $p['gambar']; ?>" alt="Gambar Kendaraan" style="width: 50px;"></td>
                         <td><?= $p['nama']; ?></td>

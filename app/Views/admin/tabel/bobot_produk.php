@@ -22,7 +22,7 @@
                         <tbody>
                             <?php foreach ($molis as $m) : ?>
                                 <tr>
-                                    <td>AM<?= $m['id']; ?></td>
+                                    <th scope="row">AM<?= $m['id']; ?></th>
                                     <td><?= $m['harga']; ?></td>
                                     <td><?= $m['power']; ?></td>
                                     <td><?= $m['kecepatan_max']; ?></td>
@@ -52,7 +52,7 @@
                         <tbody>
                             <?php foreach ($selis as $s) : ?>
                                 <tr>
-                                    <td>AS<?= $s['id']; ?></td>
+                                    <th scope="row">AS<?= $s['id']; ?></th>
                                     <td><?= $s['harga']; ?></td>
                                     <td><?= $s['power']; ?></td>
                                     <td><?= $s['kecepatan_max']; ?></td>

@@ -35,7 +35,7 @@ class Product extends BaseController
     {
         $data = [
             'title' => 'Produk | Torselis',
-            'produk' => $this->produkModel->getProduk($slug)
+            'produk' => $this->produkModel->getAllProduk($slug)
         ];
 
         if (empty($data['produk'])) {

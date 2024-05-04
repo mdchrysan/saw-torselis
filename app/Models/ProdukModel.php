@@ -13,12 +13,19 @@ class ProdukModel extends Model
     // protected $useSoftDeletes = true;
     protected $useTimestamps = true;
 
-    public function getProduk($slug = false)
+    public function getAllProduk($slug = false)
     {
         if ($slug == false) {
             return $this->findAll();
         }
         return $this->where(['slug' => $slug])->first();
+    }
+
+    public function getTorselis()
+    {
+        $molis = $this->where(['jenis_kendaraan' => '1'])->findAll();
+        $selis = $this->where(['jenis_kendaraan' => '2'])->findAll();
+        return array($molis, $selis);
     }
 
     public function getMolis()
