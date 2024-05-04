@@ -5,7 +5,7 @@
     <!-- return array 2d as one string to check jenis_kendaraan value -->
     <?php $value = array_column($produk, 'jenis_kendaraan')['1'] ?>
     <!-- conditional title -->
-    <h1 class="mb-3">Daftar Produk <?= ($value == '1') ? "Motor" : "Sepeda"; ?> Listrik</h1>
+    <h1 class="mb-3 page-title">Daftar Produk <?= ($value == '1') ? "Motor" : "Sepeda"; ?> Listrik</h1>
     <a class="btn btn-warning mb-3" href="<?= base_url('/create-product'); ?>" role="button">Tambah Produk</a>
     <?php if (session()->getFlashdata('pesan')) : ?>
         <div class="alert alert-success" role="alert">

@@ -81,4 +81,22 @@ class AdminProduct extends BaseController
         ]);
         return redirect()->to('/molis-list')->with('pesan', 'Data berhasil ditambahkan.');
     }
+
+    public function edit($slug)
+    {
+        $data = [
+            'title' => 'Edit Produk | Torselis',
+            // 'validation' => \Config\Services::validation(),
+            'produk' => $this->produkModel->getAllProduk($slug)
+        ];
+        return view('admin/product/edit', $data);
+    }
+
+    public function update($id)
+    {
+    }
+
+    public function delete($id)
+    {
+    }
 }

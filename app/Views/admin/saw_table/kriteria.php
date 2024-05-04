@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <div class="container mt-5 p-5 text-center">
-    <h1 class="mb-3">Kriteria & Bobot Subkriteria</h1>
+    <h1 class="mb-3 page-title">Kriteria & Bobot Subkriteria</h1>
     <div class="card shadow border-warning w-25 mx-auto">
         <!-- <div class="card-body"> -->
         <table class="table table-sm table-borderless">

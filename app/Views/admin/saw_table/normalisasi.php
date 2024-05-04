@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <div class="container mt-5 p-5 text-center">
-    <h1 class="mb-3">Bobot Produk per Kriteria</h1>
+    <h1 class="mb-3 page-title">Tabel Normalisasi</h1>
     <div class="row">
         <!-- Molis -->
         <div class="col-lg-6 my-3">
