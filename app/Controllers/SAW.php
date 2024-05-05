@@ -50,9 +50,12 @@ class SAW extends BaseController
 
         // function getPreferensi return $V[] contains V1,V2,V3,Vt
 
+        // call function rank
+        $Vr = $this->getRank($V);
+
         $data = [
             'title' => 'Hasil Rekomendasi | Torselis',
-            'preferensi' => $V
+            'preferensi' => $Vr
         ];
 
         // return view('home/result', $data);
@@ -176,19 +179,25 @@ class SAW extends BaseController
             // dd($V);
             // dd($V['V1'] . " | " . $V['V2'] . " | " . $V['V3'] . " | " . $V['V4'] . " | total = " . $V['Vt']);
         }
+
         // dd($V);
         return $V;
-        // $v = [];
-        // foreach ($r as $r) {
-        //     $r['v1'] = $w1 * $r['r_s1'];
-        //     $r['v2'] = $w2 * $r['r_s2'];
-        //     $r['v3'] = $w3 * $r['r_s3'];
-        //     $r['v4'] = $w4 * $r['r_s4'];
-        //     $r['vt'] = $r['v1'] + $r['v2'] + $r['v3'] + $r['v4'];
-        //     $v[] = $r;
-        //     dd($v);
-        //     // dd($v['v1'] . " | " . $v['v2'] . " | " . $v['v3'] . " | " . $v['v4'] . " | total = " . $v['vt']);
-        // }
+    }
+
+    public function getRank($V)
+    {
+        # code ...4
+        $Vt = array_column($V, 'Vt');
+        arsort($Vt);
+
+        $Vr = [];
+        $rank = 1;
+        foreach ($Vt as $vt) {
+            $i = array_search($vt, $Vt);
+            $V[$i]['rank'] = $rank++;
+            $Vr = $V;
+        }
+        return $Vr;
     }
 
     public function indexKriteria(): string
