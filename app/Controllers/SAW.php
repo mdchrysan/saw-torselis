@@ -20,37 +20,39 @@ class SAW extends BaseController
 
         // get product type & weight
         $type = $this->request->getVar('type');
-        $w_c1 = $this->request->getVar('w_c1');
-        $w_c2 = $this->request->getVar('w_c2');
-        $w_c3 = $this->request->getVar('w_c3');
-        $w_c4 = $this->request->getVar('w_c4');
+        $w1 = $this->request->getVar('w_c1');
+        $w2 = $this->request->getVar('w_c2');
+        $w3 = $this->request->getVar('w_c3');
+        $w4 = $this->request->getVar('w_c4');
 
         // if ($type == '1') $produk = "Motor Listrik";
         // elseif ($type == '2') $produk = "Sepeda Listrik";
 
         // normalize weight
-        $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
+        $sum_w = $w1 + $w2 + $w3 + $w4;
         // $text1 = "Jenis kendaraan: " . $produk;
-        // $text2 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
-        $w_c1 = $w_c1 / $sum_w;
-        $w_c2 = $w_c2 / $sum_w;
-        $w_c3 = $w_c3 / $sum_w;
-        $w_c4 = $w_c4 / $sum_w;
-        $sum_w = $w_c1 + $w_c2 + $w_c3 + $w_c4;
-        // $text3 = "w_c1=" . $w_c1 . ", w_c2=" . $w_c2 . ", w_c3=" . $w_c3 . ", w_c4=" . $w_c4 . ", sum_w=" . $sum_w;
+        // $text2 = "w_c1=" . $w1 . ", w_c2=" . $w2 . ", w_c3=" . $w3 . ", w_c4=" . $w4 . ", sum_w=" . $sum_w;
+        $w1 = $w1 / $sum_w;
+        $w2 = $w2 / $sum_w;
+        $w3 = $w3 / $sum_w;
+        $w4 = $w4 / $sum_w;
+        $sum_w = $w1 + $w2 + $w3 + $w4;
+        // $text3 = "w_c1=" . $w1 . ", w_c2=" . $w2 . ", w_c3=" . $w3 . ", w_c4=" . $w4 . ", sum_w=" . $sum_w;
 
         # debug
         // $w = array($text1, $text2, $text3);
         // dd($w);
 
         // call function getPreferensi
-        // return array($type, $w_c1, $w_c2, $w_c3, $w_c4);
+        // send var thru param
+        $V = $this->getPreferensi($type, $w1, $w2, $w3, $w4);
+        // dd($V);
 
-        // function getPreferensi return $preferensi contains array of V1,V2,V3
+        // function getPreferensi return $V[] contains V1,V2,V3,Vt
 
         $data = [
             'title' => 'Hasil Rekomendasi | Torselis',
-            // 'preferensi' => $preferensi
+            'preferensi' => $V
         ];
 
         // return view('home/result', $data);
@@ -105,6 +107,88 @@ class SAW extends BaseController
         }
 
         return $r;
+    }
+
+    public function getPreferensi($type, $w1, $w2, $w3, $w4)
+    {
+        // get r
+        // and set new var name
+        // if ($type == '1') {
+        //     $r = $this->getNormalisasiMolis();
+        //     $r['r_c1'] = $r['r_m1'];
+        //     $r['r_c2'] = $r['r_m2'];
+        //     $r['r_c3'] = $r['r_m3'];
+        //     $r['r_c4'] = $r['r_m4'];
+        // } elseif ($type == '2') {
+        //     $r = $this->getNormalisasiSelis();
+        //     $r['r_c1'] = $r['r_s1'];
+        //     $r['r_c2'] = $r['r_s2'];
+        //     $r['r_c3'] = $r['r_s3'];
+        //     $r['r_c4'] = $r['r_s4'];
+        // }
+        // get r
+        // and set new var name
+        if ($type == '1') {
+            $r = $this->getNormalisasiMolis();
+            $r1 = array_column($r, 'r_m1');
+            $r2 = array_column($r, 'r_m2');
+            $r3 = array_column($r, 'r_m3');
+            $r4 = array_column($r, 'r_m4');
+        } elseif ($type == '2') {
+            $r = $this->getNormalisasiSelis();
+            $r1 = array_column($r, 'r_s1');
+            $r2 = array_column($r, 'r_s2');
+            $r3 = array_column($r, 'r_s3');
+            $r4 = array_column($r, 'r_s4');
+        }
+        // dd($r1[0]);
+        // if ($type == '1') {
+        //     $r = $this->getNormalisasiMolis();
+        //     $r['r_c1'] = "r_m1";
+        //     $r['r_c2'] = "r_m2";
+        //     $r['r_c3'] = "r_m3";
+        //     $r['r_c4'] = "r_m4";
+        // } elseif ($type == '2') {
+        //     $r = $this->getNormalisasiSelis();
+        //     $r['r_c1'] = "r_s1";
+        //     $r['r_c2'] = "r_s2";
+        //     $r['r_c3'] = "r_s3";
+        //     $r['r_c4'] = "r_s4";
+        // }
+        // if ($type == '1') $r = $this->getNormalisasiMolis();
+        // elseif ($type == '2') $r = $this->getNormalisasiSelis();
+
+        // $r['r_c1'] = array_column($r, 'r_s1');
+        // dd($r['r_c1']);
+        // d($r);
+        // dd(array_column($r, 'r_s1'));
+        // count v = sum(w*r)1
+        $V = [];
+        $i = 0;
+        foreach ($r as $r) {
+            $r['V1'] = $w1 * $r1[$i];
+            $r['V2'] = $w2 * $r2[$i];
+            $r['V3'] = $w3 * $r3[$i];
+            $r['V4'] = $w4 * $r4[$i];
+            $r['Vt'] = $r['V1'] + $r['V2'] + $r['V3'] + $r['V4'];
+            $V[] = $r;
+            $i++;
+            // dd($V);
+            // dd($V['V1'] . " | " . $V['V2'] . " | " . $V['V3'] . " | " . $V['V4'] . " | total = " . $V['Vt']);
+        }
+        // dd($V);
+        return $V;
+        // $v = [];
+        // foreach ($r as $r) {
+        //     $r['v1'] = $w1 * $r['r_s1'];
+        //     $r['v2'] = $w2 * $r['r_s2'];
+        //     $r['v3'] = $w3 * $r['r_s3'];
+        //     $r['v4'] = $w4 * $r['r_s4'];
+        //     $r['vt'] = $r['v1'] + $r['v2'] + $r['v3'] + $r['v4'];
+        //     $v[] = $r;
+        //     dd($v);
+        //     // dd($v['v1'] . " | " . $v['v2'] . " | " . $v['v3'] . " | " . $v['v4'] . " | total = " . $v['vt']);
+        // }
     }
 
     public function indexKriteria(): string

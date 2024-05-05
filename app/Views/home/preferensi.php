@@ -7,11 +7,11 @@
         <thead class="table-warning">
             <tr>
                 <th>Kode</th>
-                <th>C1</th>
-                <th>C2</th>
-                <th>C3</th>
-                <th>C4</th>
-                <th>C5</th>
+                <th>V1</th>
+                <th>V2</th>
+                <th>V3</th>
+                <th>V4</th>
+                <th>V</th>
             </tr>
         </thead>
         <tbody>
@@ -26,16 +26,26 @@
                     <td><-?= number_format($p['vt'], 5, '.', ''); ?-></td> -->
             <!-- </tr>
             <--?php endforeach ?> -->
-            <?php for ($i = 1; $i < 21; $i++) : ?>
+            <?php foreach ($preferensi as $V) : ?>
                 <tr>
-                    <td><?= $i; ?></td>
+                    <th scope="row"><?= ($V['jenis_kendaraan'] = '1') ? "AM" : "AS"; ?><?= $V['id']; ?></th>
+                    <td><?= number_format($V['V1'], 5, '.', ''); ?></td>
+                    <td><?= number_format($V['V2'], 5, '.', ''); ?></td>
+                    <td><?= number_format($V['V3'], 5, '.', ''); ?></td>
+                    <td><?= number_format($V['V4'], 5, '.', ''); ?></td>
+                    <td><?= number_format($V['Vt'], 5, '.', ''); ?></td>
+                </tr>
+            <?php endforeach ?>
+            <!-- <--?php for ($i = 1; $i < 21; $i++) : ?> -->
+            <!-- <tr>
+                    <td><--?= $i; ?></td>
                     <td>halo</td>
                     <td>halo</td>
                     <td>bdg</td>
                     <td>ibkt</td>
                     <td>prgn</td>
-                </tr>
-            <?php endfor ?>
+                </tr> -->
+            <!-- <--?php endfor ?> -->
         </tbody>
     </table>
 
