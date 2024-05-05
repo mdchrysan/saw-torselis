@@ -6,46 +6,27 @@
     <table class="table table-sm table-borderless">
         <thead class="table-warning">
             <tr>
-                <th>Kode</th>
+                <th>Nama</th>
                 <th>V1</th>
                 <th>V2</th>
                 <th>V3</th>
                 <th>V4</th>
                 <th>V</th>
+                <th>Rank</th>
             </tr>
         </thead>
         <tbody>
-            <!-- <--?php foreach ($produk as $p) : ?>
+            <?php foreach ($preferensi as $Vr) : ?>
                 <tr>
-                    <td><--?= ($p['jenis_kendaraan'] = '1') ? "AM" : "AS"; ?><--?= $p['id']; ?></td> -->
-            <!-- show r_m to 5 decimal places -->
-            <!-- <td><-?= number_format($p['v1'], 5, '.', ''); ?-></td>
-                    <td><-?= number_format($p['v2'], 5, '.', ''); ?-></td>
-                    <td><-?= number_format($p['v3'], 5, '.', ''); ?-></td>
-                    <td><-?= number_format($p['v4'], 5, '.', ''); ?-></td>
-                    <td><-?= number_format($p['vt'], 5, '.', ''); ?-></td> -->
-            <!-- </tr>
-            <--?php endforeach ?> -->
-            <?php foreach ($preferensi as $V) : ?>
-                <tr>
-                    <th scope="row"><?= ($V['jenis_kendaraan'] = '1') ? "AM" : "AS"; ?><?= $V['id']; ?></th>
-                    <td><?= number_format($V['V1'], 5, '.', ''); ?></td>
-                    <td><?= number_format($V['V2'], 5, '.', ''); ?></td>
-                    <td><?= number_format($V['V3'], 5, '.', ''); ?></td>
-                    <td><?= number_format($V['V4'], 5, '.', ''); ?></td>
-                    <td><?= number_format($V['Vt'], 5, '.', ''); ?></td>
+                    <th scope="row"><?= $Vr['nama']; ?></th>
+                    <td><?= number_format($Vr['V1'], 5, '.', ''); ?></td>
+                    <td><?= number_format($Vr['V2'], 5, '.', ''); ?></td>
+                    <td><?= number_format($Vr['V3'], 5, '.', ''); ?></td>
+                    <td><?= number_format($Vr['V4'], 5, '.', ''); ?></td>
+                    <td><?= number_format($Vr['Vt'], 5, '.', ''); ?></td>
+                    <td><?= $Vr['rank']; ?></td>
                 </tr>
             <?php endforeach ?>
-            <!-- <--?php for ($i = 1; $i < 21; $i++) : ?> -->
-            <!-- <tr>
-                    <td><--?= $i; ?></td>
-                    <td>halo</td>
-                    <td>halo</td>
-                    <td>bdg</td>
-                    <td>ibkt</td>
-                    <td>prgn</td>
-                </tr> -->
-            <!-- <--?php endfor ?> -->
         </tbody>
     </table>
 

@@ -46,20 +46,33 @@ class SAW extends BaseController
         // call function getPreferensi
         // send var thru param
         $V = $this->getPreferensi($type, $w1, $w2, $w3, $w4);
-        // dd($V);
 
         // function getPreferensi return $V[] contains V1,V2,V3,Vt
 
         // call function rank
         $Vr = $this->getRank($V);
 
+        // filter Vr to third highest rank
+        $Vr_result = [];
+        foreach ($Vr as $Vr) {
+            if (in_array($Vr['rank'], [1, 2, 3]))
+                $Vr_result[] = $Vr;
+        }
+
+        // sort result based on rank
+        usort($Vr_result, function ($a, $b) {
+            return $a['rank'] - $b['rank'];
+        });
+
         $data = [
             'title' => 'Hasil Rekomendasi | Torselis',
-            'preferensi' => $Vr
+            'preferensi' => $Vr_result
         ];
 
-        // return view('home/result', $data);
-        return view('home/preferensi', $data);
+        return view('home/result', $data);
+
+        // show preference table with rank value
+        // return view('home/preferensi', $data);
     }
 
     public function getNormalisasiMolis()
@@ -116,21 +129,6 @@ class SAW extends BaseController
     {
         // get r
         // and set new var name
-        // if ($type == '1') {
-        //     $r = $this->getNormalisasiMolis();
-        //     $r['r_c1'] = $r['r_m1'];
-        //     $r['r_c2'] = $r['r_m2'];
-        //     $r['r_c3'] = $r['r_m3'];
-        //     $r['r_c4'] = $r['r_m4'];
-        // } elseif ($type == '2') {
-        //     $r = $this->getNormalisasiSelis();
-        //     $r['r_c1'] = $r['r_s1'];
-        //     $r['r_c2'] = $r['r_s2'];
-        //     $r['r_c3'] = $r['r_s3'];
-        //     $r['r_c4'] = $r['r_s4'];
-        // }
-        // get r
-        // and set new var name
         if ($type == '1') {
             $r = $this->getNormalisasiMolis();
             $r1 = array_column($r, 'r_m1');
@@ -144,27 +142,7 @@ class SAW extends BaseController
             $r3 = array_column($r, 'r_s3');
             $r4 = array_column($r, 'r_s4');
         }
-        // dd($r1[0]);
-        // if ($type == '1') {
-        //     $r = $this->getNormalisasiMolis();
-        //     $r['r_c1'] = "r_m1";
-        //     $r['r_c2'] = "r_m2";
-        //     $r['r_c3'] = "r_m3";
-        //     $r['r_c4'] = "r_m4";
-        // } elseif ($type == '2') {
-        //     $r = $this->getNormalisasiSelis();
-        //     $r['r_c1'] = "r_s1";
-        //     $r['r_c2'] = "r_s2";
-        //     $r['r_c3'] = "r_s3";
-        //     $r['r_c4'] = "r_s4";
-        // }
-        // if ($type == '1') $r = $this->getNormalisasiMolis();
-        // elseif ($type == '2') $r = $this->getNormalisasiSelis();
 
-        // $r['r_c1'] = array_column($r, 'r_s1');
-        // dd($r['r_c1']);
-        // d($r);
-        // dd(array_column($r, 'r_s1'));
         // count v = sum(w*r)1
         $V = [];
         $i = 0;
@@ -176,17 +154,13 @@ class SAW extends BaseController
             $r['Vt'] = $r['V1'] + $r['V2'] + $r['V3'] + $r['V4'];
             $V[] = $r;
             $i++;
-            // dd($V);
-            // dd($V['V1'] . " | " . $V['V2'] . " | " . $V['V3'] . " | " . $V['V4'] . " | total = " . $V['Vt']);
         }
 
-        // dd($V);
         return $V;
     }
 
     public function getRank($V)
     {
-        # code ...4
         $Vt = array_column($V, 'Vt');
         arsort($Vt);
 
@@ -239,17 +213,6 @@ class SAW extends BaseController
             'title' => 'Normalisasi | Torselis',
             'molis' => $molis,
             'selis' => $selis
-        ];
-        return view('admin/saw_table/normalisasi', $data);
-    }
-
-    public function indexPreferensi()
-    {
-        $p = 0;
-
-        $data = [
-            'title' => 'Preferensi | Torselis',
-            'produk' => $p
         ];
         return view('admin/saw_table/normalisasi', $data);
     }
