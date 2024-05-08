@@ -2,15 +2,15 @@
 
 <?= $this->section('content'); ?>
 <!-- start banner Area -->
-<section class="container banner">
-    <div class="row d-flex">
-        <div class="col-lg-7 align-items-center">
-            <div class="container">
-                <img class="img-fluid w-75" src="img/banner/motor-red.png" alt="">
+<section class="banner">
+    <div class="row m-5">
+        <div class="col-lg-6 col-md-5 col-sm-12 banner-fig">
+            <div class="container pt-5">
+                <img class="banner-img" src="img/banner/motor-red.png" alt="">
             </div>
         </div>
-        <div class="col-lg-5 col-md-6">
-            <div class="container" style="text-align: start;">
+        <div class="col-lg-6 col-md-7 col-sm-12 banner-text">
+            <div class="container">
                 <div class="banner-head">Berkendara <br>dengan Listrik</div>
                 <div class="banner-subhead">Menghadirkan pilihan<br>motor & sepeda listrik<br>terbaik untuk Anda!</div>
             </div>
@@ -20,37 +20,32 @@
 <!-- end banner Area -->
 
 <!-- start About Area -->
-<section class="features-area section_gap" id="tentang">
-    <div class="container">
-        <div class="row features-inner">
-            <!-- about 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img id="iconAbout1" style="height: 50px;" src="img/about/cursor.png" alt="">
+<section id="tentang">
+    <div class="container my-5">
+        <h1 class="text-center page-title">Tentang Torselis</h1>
+        <div class="row p-5">
+            <div class="col-md-4 col-sm-12 mb-3 card-about">
+                <div class="card border-warning h-100" style="width: 18rem;">
+                    <div class="card-body text-center d-flex flex-column justify-content-center">
+                        <h5 class="card-title"><i class="fa-solid fa-arrow-pointer fa-2x"></i></h5>
+                        <p class="card-text">Mendukung<br>pemilihan<br>motor & sepeda<br>listrik</p>
                     </div>
-                    <h6>Mendukung</h6>
-                    <p>pemilihan motor & sepeda listrik</p>
                 </div>
             </div>
-            <!-- about 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img id="iconAbout2" style="height: 50px;" src="img/about/scale.png" alt="">
+            <div class="col-md-4 col-sm-12 mb-3 card-about">
+                <div class="card border-warning h-100" style="width: 18rem;">
+                    <div class="card-body text-center d-flex flex-column justify-content-center">
+                        <h5 class="card-title"><i class="fa-solid fa-scale-balanced fa-2x"></i></h5>
+                        <p class="card-text">Menggunakan<br>kriteria<br>yang dapat<br>disesuaikan</p>
                     </div>
-                    <h6>Menggunakan</h6>
-                    <p>kriteria yang dapat disesuaikan</p>
                 </div>
             </div>
-            <!-- about 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-features">
-                    <div class="f-icon">
-                        <img id="iconAbout3" style="height: 50px;" src="img/about/achievement.png" alt="">
+            <div class="col-md-4 col-sm-12 mb-3 card-about">
+                <div class="card border-warning h-100" style="width: 18rem;">
+                    <div class="card-body text-center d-flex flex-column justify-content-center">
+                        <h5 class="card-title"><i class="fa-solid fa-trophy fa-2x"></i></h5>
+                        <p class="card-text">Memberikan<br>3 rekomendasi<br>pilihan terbaik</p>
                     </div>
-                    <h6>Memberikan</h6>
-                    <p>rekomendasi terbaik</p>
                 </div>
             </div>
         </div>
@@ -59,16 +54,30 @@
 <!-- end About Area -->
 
 <!-- start SAW Area -->
-<section class="saw-area">
-    <div class="container w-50">
-        <div class="mb-3">
-            <h6>1. Pilih jenis kendaraan yang Anda inginkan</h6>
-            <h6>2. Tentukan pengaturan dari setiap kriteria pada kendaraan yang sesuai kebutuhan Anda</h6>
-            <h6>3. Klik tombol "Dapatkan Hasil"</h6>
-            <h6>4. Hasil rekomendasi terbaik akan langsung muncul di hadapan Anda</h6>
+<section id="sawSteps">
+    <div class="container my-5 d-flex flex-column justify-content-center align-items-center">
+        <h3 class="text-center page-title">Bingung mau pilih kendaraan listrik yang mana?</h3>
+        <h5 class="text-center">Ikuti langkah di bawah ini!</h5>
+        <div class="steps p-5">
+            <div class="step-body">
+                <div class="step-number">1</div>
+                <h6 class="step-text">Pilih jenis kendaraan yang Anda inginkan</h6>
+            </div>
+            <div class="step-body">
+                <div class="step-number">2</div>
+                <h6 class="step-text">Tentukan pengaturan dari setiap kriteria pada kendaraan yang sesuai kebutuhan Anda</h6>
+            </div>
+            <div class="step-body">
+                <div class="step-number">3</div>
+                <h6 class="step-text">Klik tombol "Dapatkan Hasil"</h6>
+            </div>
+            <div class="step-body">
+                <div class="step-number">4</div>
+                <h6 class="step-text">Hasil rekomendasi terbaik akan langsung muncul di hadapan Anda</h6>
+            </div>
         </div>
-        <div class="text-center mb-5">
-            <a href="<?= base_url('/settings'); ?>" class="btn btn-warning" role="button">Mulai</a>
+        <div class="text-center mb-5" style="background-color: #ffc107;">
+            <a href="<?= base_url('/settings'); ?>" class="btn btn-warning btn-outline-dark" style="width:200px" role="button">Mulai</a>
         </div>
     </div>
 </section>

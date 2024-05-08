@@ -6,8 +6,8 @@
         <!-- return array 2d as one string to check jenis_kendaraan value -->
         <?php $value = array_column($produk, 'jenis_kendaraan')['1'] ?>
         <!-- conditional title -->
-        <h1 class="mb-3 page-title">Daftar Produk <?= ($value == '1') ? "Motor" : "Sepeda"; ?> Listrik</h1>
-        <div class="btn-group shadow" role="group" aria-label="Button Jenis Produk">
+        <h1 class="my-5 page-title">Daftar Produk <?= ($value == '1') ? "Motor" : "Sepeda"; ?> Listrik</h1>
+        <div class="btn-group shadow" role="group" aria-label="Button Jenis Produk" style="background-color: #ffc107;">
             <a href="/products/motor-listrik" class="btn btn-warning btn-outline-dark">Motor Listrik</a>
             <a href="/products/sepeda-listrik" class="btn btn-warning btn-outline-dark">Sepeda Listrik</a>
         </div>
