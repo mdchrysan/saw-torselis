@@ -3,7 +3,10 @@
 <?= $this->section('content'); ?>
 <div class="bg-page">
     <div class="container mt-5 p-3 text-center">
-        <h1 class="mb-3 page-title">Daftar Produk</h1>
+        <!-- return array 2d as one string to check jenis_kendaraan value -->
+        <?php $value = array_column($produk, 'jenis_kendaraan')['1'] ?>
+        <!-- conditional title -->
+        <h1 class="mb-3 page-title">Daftar Produk <?= ($value == '1') ? "Motor" : "Sepeda"; ?> Listrik</h1>
         <div class="btn-group shadow" role="group" aria-label="Button Jenis Produk">
             <a href="/products/motor-listrik" class="btn btn-warning btn-outline-dark">Motor Listrik</a>
             <a href="/products/sepeda-listrik" class="btn btn-warning btn-outline-dark">Sepeda Listrik</a>
