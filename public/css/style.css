@@ -258,3 +258,22 @@ body {
 .btn-hasil {
   border: 1px solid #000;
 }
+
+/* -----------
+    DETAIL
+----------- */
+@media only screen and (max-width: 700px){
+  .img-detail {
+    width: 80vw;
+  }
+}
+
+.img-detail {
+  max-width: 30rem;
+}
+
+.details-back {
+  text-decoration: none;
+  color: inherit;
+  font-style: italic;
+}

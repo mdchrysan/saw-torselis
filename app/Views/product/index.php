@@ -11,7 +11,7 @@
             <a href="/products/motor-listrik" class="btn btn-warning btn-outline-dark">Motor Listrik</a>
             <a href="/products/sepeda-listrik" class="btn btn-warning btn-outline-dark">Sepeda Listrik</a>
         </div>
-        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 p-4">
+        <div class="row p-4">
             <?php $i = 1; ?>
             <?php foreach ($produk as $p) : ?>
                 <!-- start console test -->
@@ -22,7 +22,7 @@
                     <?php echo $i++ ?>
                 </script>
                 <!-- end console test -->
-                <div class="col mb-3">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
                     <div class="card mx-auto shadow" style="width: 15rem;">
                         <img src="/img/produk/<?= $p['gambar']; ?>" class="card-img-top" alt="Gambar Produk">
                         <div class="card-body">
