@@ -46,7 +46,7 @@
                             <div class="col-6"><?= $produk['sistem_rem']; ?></div>
                         </div>
                     </div>
-                    <div class="mt-5"><a class="details-back text-italic" href="/products">
+                    <div class="mt-5"><a class="link-back text-italic" href="/products">
                             < Kembali ke Daftar Produk</a>
                     </div>
                 </div>

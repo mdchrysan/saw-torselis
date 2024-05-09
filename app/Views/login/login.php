@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/logo_torselis.png" type="image/gif">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title><?= $title; ?></title>
 </head>
 
@@ -29,18 +30,20 @@
                         <div class="signup-link">Masuk sebagai Admin untuk melakukan pengaturan terhadap data pada <i>website</i></div>
                     </div>
                 </form>
-                <form action="#" class="signup">
+                <form action="/auth" method="POST" class="signup">
+                    <?= csrf_field(); ?>
                     <div class="field">
-                        <input type="text" placeholder="Identitas" required>
+                        <input type="text" placeholder="Identitas" name="username" autofocus required>
                     </div>
                     <div class="field">
-                        <input type="password" placeholder="Kata Sandi" required>
+                        <input type="password" placeholder="Kata Sandi" name="password" required>
                     </div>
                     <div class="field btn">
                         <div class="btn-layer"></div>
                         <input type="submit" value="Masuk">
                     </div>
-                    <a class="link-secondary link-underline-opacity-0 text-center" href="<?= base_url('/'); ?>" role="button">Kembali ke Beranda</a>
+                    <a class="link-back mt-3" href="<?= base_url('/'); ?>" role="button">
+                        < Kembali ke Beranda</a>
                 </form>
             </div>
         </div>

@@ -36,6 +36,12 @@ body {
   font-family: "Racing Sans One", sans-serif;
 }
 
+.link-back {
+  text-decoration: none;
+  color: #251b00;
+  font-style: italic;
+}
+
 /* -----------
     NAVBAR
 ----------- */
@@ -270,10 +276,4 @@ body {
 
 .img-detail {
   max-width: 30rem;
-}
-
-.details-back {
-  text-decoration: none;
-  color: inherit;
-  font-style: italic;
 }

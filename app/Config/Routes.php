@@ -17,6 +17,7 @@ $routes->get('/products/(:segment)', 'Product::details/$1');
 
 // Login page
 $routes->get('/login', 'Login::index');
+$routes->post('/auth', 'Login::auth');
 $routes->get('/logout', 'Login::logout');
 
 // Admin page - Produk

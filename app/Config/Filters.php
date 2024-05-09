@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\FilterAdmin;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -34,6 +35,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'filteradmin'   => FilterAdmin::class,
     ];
 
     /**
@@ -72,6 +74,9 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            'filteradmin' => [
+                'except' => ['login/*', 'login', 'auth', '/', 'settings', 'result', 'products', 'products/*', 'debug']
+            ]
         ],
         'after' => [
             // 'honeypot',
