@@ -23,6 +23,19 @@ body {
   /* background-color: black; */
 }
 
+.bg-page{
+  background-image: url("../../img/banner/banner-bg.jpg");
+  height: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-title {
+  text-shadow: rgb(253, 191, 74) 2px 0 3px;
+  font-family: "Racing Sans One", sans-serif;
+}
+
 /* -----------
     NAVBAR
 ----------- */
@@ -219,15 +232,29 @@ body {
   background-color: #ebfbff;
 }
 
-.bg-page{
-  background-image: url("../../img/banner/banner-bg.jpg");
-  height: 100%;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* -----------
+    SETTING
+----------- */
+@media only screen and (max-width: 700px) {
+  .setting-group {
+    min-width: 70vw;
+  }
 }
 
-.page-title {
-  text-shadow: rgb(253, 191, 74) 2px 0 3px;
-  font-family: "Racing Sans One", sans-serif;
+.setting-group {
+  width: 35vw;
+}
+
+.invisible-radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.select-big {
+  width: 200px;
+  height: 40px;
+}
+
+.btn-hasil {
+  border: 1px solid #000;
 }
