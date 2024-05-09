@@ -12,8 +12,8 @@
             <?= session()->getFlashdata('pesan'); ?>
         </div>
     <?php endif; ?>
-    <div class="table-responsive">
-        <table class="table table-hover">
+    <div class="table-responsive mb-3" style="border-radius: 5px;">
+        <table class="table table-hover mb-0">
             <thead class="table-warning">
                 <!-- 12 cols -->
                 <tr>
@@ -27,13 +27,13 @@
                     <th scope="col">Kecepatan Max</th>
                     <th scope="col">Jarak Tempuh</th>
                     <th scope="col">Daya Angkut</th>
-                    <th scope="col">Warna</th>
+                    <th scope="col" style="min-width: 200px;">Warna</th>
                     <th scope="col">Sistem Rem</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col" style="min-width: 115px;">Aksi</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php $i = 1; ?>
+            <tbody class="bg-light">
+                <?php $i = 1 + (5 * ($currentPage - 1)); ?>
                 <?php foreach ($produk as $p) : ?>
                     <?php $pharga = number_format($p['harga']); ?>
                     <tr>
@@ -51,15 +51,16 @@
                         <td><?= $p['sistem_rem']; ?></td>
                         <td>
                             <!-- edit button -->
-                            <a role="button" class="btn bg-transparent" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a role="button" class="btn bg-transparent" href="#"><i class="fa-solid fa-pen-to-square" style="color: black;"></i></a>
                             <!-- delete trigger -->
-                            <button type="button" class="btn bg-transparent"><i class="fa-regular fa-trash-can"></i></button>
+                            <a type="button" class="btn bg-transparent" href="#"><i class="fa-regular fa-trash-can" style="color: black;"></i></a>
                         </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
     </div>
+    <?= $pager->links('produk', 'admin_pagination') ?>
 </div>
 
 <?= $this->endSection(); ?>

@@ -22,18 +22,35 @@ class AdminProduct extends BaseController
         // dd($t['1']);
         // one line code
         // dd(array_column($m, 'jenis_kendaraan')['1']);
+
+        // perPage parameter linked to number increment on views
+        $molis = $this->produkModel->where(['jenis_kendaraan' => '1'])->paginate(5, 'produk');
+        $pager = $this->produkModel->where(['jenis_kendaraan' => '1'])->pager;
+
+        // set default page if not stated
+        $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
+
         $data = [
             'title' => 'Produk Molis | Torselis',
-            'produk' => $this->produkModel->getMolis()
+            // 'produk' => $this->produkModel->getMolis(),
+            'produk' => $molis,
+            'pager' => $pager,
+            'currentPage' => $currentPage
         ];
         return view('admin/product/dashboard', $data);
     }
 
     public function indexSelis(): string
     {
+        $selis = $this->produkModel->where(['jenis_kendaraan' => '2'])->paginate(5, 'produk');
+        $pager = $this->produkModel->where(['jenis_kendaraan' => '2'])->pager;
+        $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
+
         $data = [
             'title' => 'Produk Selis | Torselis',
-            'produk' => $this->produkModel->getSelis()
+            'produk' => $selis,
+            'pager' => $pager,
+            'currentPage' => $currentPage
         ];
         return view('admin/product/dashboard', $data);
     }

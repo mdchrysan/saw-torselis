@@ -31,6 +31,7 @@
                             <?php endforeach ?>
                         </tbody>
                     </table>
+                    <?= $pager1->links('molis', 'admin_pagination') ?>
                 </div>
             </div>
         </div>
@@ -61,6 +62,7 @@
                             <?php endforeach ?>
                         </tbody>
                     </table>
+                    <?= $pager2->links('selis', 'admin_pagination') ?>
                 </div>
             </div>
         </div>

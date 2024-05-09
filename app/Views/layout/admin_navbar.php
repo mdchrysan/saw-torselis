@@ -25,7 +25,7 @@
                     <div class="dropdown-menu bg-warning" aria-labelledby="navbarTabelAdmin">
                         <a class="dropdown-item" href="<?= base_url('/kriteria'); ?>">Kriteria & Bobot Subkriteria</a>
                         <a class="dropdown-item" href="<?= base_url('/bobot-produk'); ?>">Bobot Produk</a>
-                        <a class="dropdown-item" href="<?= base_url('/nilai-normalisasi'); ?>">Nilai Normalisasi</a>
+                        <a class="dropdown-item" href="<?= base_url('/normalisasi'); ?>">Nilai Normalisasi</a>
                     </div>
                 </li>
                 <!-- menu logout -->

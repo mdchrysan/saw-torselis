@@ -193,13 +193,21 @@ class SAW extends BaseController
         # same output
         // dd($p);
         // dd($produk);
+        $molis = $this->produkModel->where(['jenis_kendaraan' => '1'])->paginate(10, 'molis');
+        $selis = $this->produkModel->where(['jenis_kendaraan' => '2'])->paginate(10, 'selis');
+        $pager1 = $this->produkModel->where(['jenis_kendaraan' => '1'])->pager;
+        $pager2 = $this->produkModel->where(['jenis_kendaraan' => '2'])->pager;
+        $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
 
-        list($molis, $selis) = $this->produkModel->getTorselis();
+        // list($molis, $selis) = $this->produkModel->getTorselis();
 
         $data = [
             'title' => 'Bobot Produk | Torselis',
             'molis' => $molis,
-            'selis' => $selis
+            'selis' => $selis,
+            'pager1' => $pager1,
+            'pager2' => $pager2,
+            'currentPage' => $currentPage
         ];
         return view('admin/saw_table/bobot_produk', $data);
     }
