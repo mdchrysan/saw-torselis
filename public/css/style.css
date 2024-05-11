@@ -248,9 +248,10 @@ body {
 }
 
 .setting-group {
-  width: 35vw;
+  width: 40vw;
 }
 
+/* hidden */
 .invisible-radio {
   position: absolute;
   opacity: 0;
@@ -263,6 +264,17 @@ body {
 
 .btn-hasil {
   border: 1px solid #000;
+}
+
+/* -----------
+    RESULT
+----------- */
+.result-img {
+  height: 60%;
+}
+
+.card-text .text-right {
+  font-size: small;
 }
 
 /* -----------

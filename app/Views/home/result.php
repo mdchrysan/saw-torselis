@@ -3,13 +3,13 @@
 <?= $this->section('content'); ?>
 <div class="bg-page">
     <div class="container mt-5 p-3 text-center">
-        <h1 class="mb-3 page-title">Hasil Rekomendasi</h1>
+        <h1 class="mb-3 mt-5 page-title">Hasil Rekomendasi</h1>
         <div class="row">
             <?php foreach ($preferensi as $p) : ?>
                 <div class="col col-lg-4 col-sm-12 mb-3">
                     <h3 class="page-title">#<?= $p['rank']; ?></h3>
                     <div class="card mx-auto shadow" style="height: 70vh; width: 18rem;">
-                        <img src="/img/produk/<?= $p['gambar']; ?>" class="card-img-top" alt="Gambar Produk">
+                        <img src="/img/produk/<?= $p['gambar']; ?>" class="card-img-top result-img" alt="Gambar Produk">
                         <div class="card-body">
                             <h4 class="card-title"><?= $p['nama']; ?></h4>
                             <div>

@@ -23,19 +23,19 @@
                         </div>
                         <div class="row">
                             <div class="col-6">Power Dinamo</div>
-                            <div class="col-6"><?= $produk['power']; ?></div>
+                            <div class="col-6"><?= $produk['power']; ?> watt</div>
                         </div>
                         <div class="row">
                             <div class="col-6">Kecepatan Max</div>
-                            <div class="col-6"><?= $produk['kecepatan_max']; ?></div>
+                            <div class="col-6"><?= $produk['kecepatan_max']; ?> km/h</div>
                         </div>
                         <div class="row">
                             <div class="col-6">Jarak Tempuh</div>
-                            <div class="col-6"><?= $produk['jarak_tempuh']; ?></div>
+                            <div class="col-6"><?= $produk['jarak_tempuh']; ?> km</div>
                         </div>
                         <div class="row">
                             <div class="col-6">Daya Angkut</div>
-                            <div class="col-6"><?= $produk['daya_angkut']; ?></div>
+                            <div class="col-6"><?= $produk['daya_angkut']; ?> kg</div>
                         </div>
                         <div class="row">
                             <div class="col-6">Warna</div>

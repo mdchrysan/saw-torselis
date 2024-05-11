@@ -15,7 +15,8 @@ class Home extends BaseController
     public function setWeight()
     {
         $data = [
-            'title' => 'Torselis'
+            'title' => 'Torselis',
+            'validation' => \Config\Services::validation()
         ];
         return view('home/saw_settings', $data);
     }

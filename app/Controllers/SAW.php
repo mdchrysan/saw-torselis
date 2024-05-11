@@ -16,7 +16,38 @@ class SAW extends BaseController
     public function getWeight()
     {
         // validation
-        # code ...
+        if (!$this->validate([
+            'w_c1' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Harap memilih tingkatan kriteria.',
+                    'numeric' => 'Harap memilih tingkatan kriteria.'
+                ]
+            ],
+            'w_c2' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Harap memilih tingkatan kriteria.',
+                    'numeric' => 'Harap memilih tingkatan kriteria.'
+                ]
+            ],
+            'w_c3' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Harap memilih tingkatan kriteria.',
+                    'numeric' => 'Harap memilih tingkatan kriteria.'
+                ]
+            ],
+            'w_c4' => [
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => 'Harap memilih tingkatan kriteria.',
+                    'numeric' => 'Harap memilih tingkatan kriteria.'
+                ]
+            ],
+        ])) {
+            return redirect()->to('/settings')->withInput();
+        }
 
         // get product type & weight
         $type = $this->request->getVar('type');
@@ -171,6 +202,7 @@ class SAW extends BaseController
             $V[$i]['rank'] = $rank++;
             $Vr = $V;
         }
+
         return $Vr;
     }
 
